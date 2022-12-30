@@ -46,7 +46,7 @@ print (Dados_Vitor)
 #PASSOS
 # 1° criei meus objetos 
 # 2°Tenho que gerar os calculos 
-# 3°Tenho que gerar todas as informçoes como persutal de gordura e imc na tela ( provavel que tenha que criar metodos )
+# 3°Tenho que gerar todas as informaçoes como % de gordura e imc na tela ( provavel que tenha que criar metodos )
 #
 #
 #
