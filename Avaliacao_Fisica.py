@@ -24,9 +24,14 @@ class Avaliacao: # GERA OS DADOS DA AVALIAÇÂO DO MEU CLIENTE
         self.abdominal =  Abdôminal
         self.femural_medio =   Femural_Medio
 
+    def Imc (self): # CAlcular o IMC
+        self.imc = self.peso / self.altura ** 2
+        return f'{self.imc:.2f}'
+
+
     def __str__(self):
         return f'  --> Peso: {self.peso}kg - Altura: {self.altura} -  Subescapular {self.subscapular}mm - Triceps {self.triceps}mm - Peitoral {self.peitoral}mm - Axilar_Media {self.axilar_media}mm - Supra_Iliaca {self.supra_iliaca}mm - Abdôminal {self.abdominal}mm - Femural_Medio {self.femural_medio}mm '
-
+        
 
 #ProgramaPricipal
 
@@ -36,10 +41,12 @@ Dados_Vitor = Avaliacao( 84 , 1.82, 8, 10 , 4, 12, 20 , 22 , 18 )
 
 
 
+
 #Teste
 
 print (Vitor)
 print (Dados_Vitor)
+print(Dados_Vitor.Imc())
 
 
 
