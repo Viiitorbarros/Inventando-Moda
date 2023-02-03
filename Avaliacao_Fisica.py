@@ -7,13 +7,11 @@ class Cliente :  # GERA OS DADOS DO MEU CLIENTE
 
 
     def __str__(self): 
-        return f'  --> nome: {self._nome} - idade: {self._idade} Anos - telefone: {self._tefone} - emai: {self._email}'
+        return f'  --> nome: {self._nome} - idade: {self._idade} Anos - telefone: {self._tefone} - email: {self._email}'
 
 class Avaliacao: # GERA OS DADOS DA AVALIAÇÂO DO MEU CLIENTE
     def __init__(self, peso, altura, Subescapular, Triceps, Peitoral, 
     Axilar_Media, Supra_Iliaca, Abdôminal, Femural_Medio):
-
-
         self.peso = peso
         self.altura = altura
         self.subscapular = Subescapular
@@ -24,10 +22,10 @@ class Avaliacao: # GERA OS DADOS DA AVALIAÇÂO DO MEU CLIENTE
         self.abdominal = Abdôminal
         self.femural_medio =  Femural_Medio
         self.soma_dobra = Subescapular + Triceps + Peitoral + Axilar_Media + Supra_Iliaca + Abdôminal + Femural_Medio
+
     def Imc (self): # CAlcular o IMC
         self.imc = self.peso / self.altura ** 2
         return f'IMC : {self.imc:.2f}'
-
 
     def __str__(self):
         return f'  --> Peso: {self.peso}kg - Altura: {self.altura} - \n' \
@@ -62,7 +60,7 @@ print(Dados_Vitor.calcula_gordura())
 # 1° criei meus objetos 
 # 2°Tenho que gerar os calculos 
 # 3°Tenho que gerar todas as informaçoes como % de gordura e imc na tela ( provavel que tenha que criar metodos )
-#
+# 4° usar o tkinter  para a interface grafica
 #
 #
 #
