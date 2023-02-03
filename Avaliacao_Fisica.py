@@ -21,23 +21,30 @@ class Avaliacao: # GERA OS DADOS DA AVALIAÇÂO DO MEU CLIENTE
         self.peitoral = Peitoral
         self.axilar_media = Axilar_Media
         self.supra_iliaca = Supra_Iliaca
-        self.abdominal =  Abdôminal
-        self.femural_medio =   Femural_Medio
-
+        self.abdominal = Abdôminal
+        self.femural_medio =  Femural_Medio
+        self.soma_dobra = Subescapular + Triceps + Peitoral + Axilar_Media + Supra_Iliaca + Abdôminal + Femural_Medio
     def Imc (self): # CAlcular o IMC
         self.imc = self.peso / self.altura ** 2
-        return f'{self.imc:.2f}'
+        return f'IMC : {self.imc:.2f}'
 
 
     def __str__(self):
-        return f'  --> Peso: {self.peso}kg - Altura: {self.altura} -  Subescapular {self.subscapular}mm - Triceps {self.triceps}mm - Peitoral {self.peitoral}mm - Axilar_Media {self.axilar_media}mm - Supra_Iliaca {self.supra_iliaca}mm - Abdôminal {self.abdominal}mm - Femural_Medio {self.femural_medio}mm '
-        
+        return f'  --> Peso: {self.peso}kg - Altura: {self.altura} - \n' \
+               f' Subescapular {self.subscapular}mm - Triceps {self.triceps}mm -' \
+               f' Peitoral {self.peitoral}mm - Axilar_Media {self.axilar_media}mm - \n' \
+               f' Supra_Iliaca {self.supra_iliaca}mm - Abdôminal {self.abdominal}mm - Femural_Medio {self.femural_medio}mm '
+
+    def calcula_gordura(self):
+        dc = 1.112 - 0.00043499 * (self.soma_dobra) + 0.00000055 * (self.soma_dobra)*2 - 0.00028826 * (22)
+        Percentual_de_gordura = (495 / dc) - 450
+        return f'Percentual De Gordura {Percentual_de_gordura:.2f} %'
 
 #ProgramaPricipal
 
 
-Vitor = Cliente('Vitor Barros', 26, '(22)997637516' , 'vitor-nf10@hotmail.com') 
-Dados_Vitor = Avaliacao( 84 , 1.82, 8, 10 , 4, 12, 20 , 22 , 18 )
+Vitor = Cliente('Vitor Barros', 33, '(22)997637516' , 'vitor-nf10@hotmail.com')
+Dados_Vitor = Avaliacao( 70 , 1.82, 9, 12 , 5, 6, 9 , 14 , 16 )
 
 
 
@@ -47,6 +54,7 @@ Dados_Vitor = Avaliacao( 84 , 1.82, 8, 10 , 4, 12, 20 , 22 , 18 )
 print (Vitor)
 print (Dados_Vitor)
 print(Dados_Vitor.Imc())
+print(Dados_Vitor.calcula_gordura())
 
 
 
